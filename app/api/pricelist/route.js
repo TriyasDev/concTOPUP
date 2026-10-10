@@ -5,7 +5,15 @@ let cachedData = null;
 let lastFetchTime = 0;
 
 export async function GET(request) {
-  const 
+  const dateTime = Date.now();
+  const durationCache = 1000 * 60 * 60;
+
+  if (cachedData && (dateTime - lastFetchTime < durationCache)) {
+    console.log("catch new price");
+    return NextResponse.json(cachedData);
+  }
+
+  console.log("catch new price in digiflazz");
 
   const username = process.env.DIGIFLAZZ_USERNAME;
   const apiKey = process.env.DIGIFLAZZ_API_KEY;
