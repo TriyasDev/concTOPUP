@@ -1,29 +1,64 @@
-'use client';
-import { useState } from 'react';
+"use client"
 
-export default function Home() {
-  const [respon, setRespon] = useState('');
+import {
+  Accordion, AccordionContent,
+  AccordionItem, AccordionTrigger,
+} from "@/components/ui/accordion"
 
-  const testKoneksi = async () => {
-    try {
-      const req = await fetch('/api/test', { method: 'POST' });
-      const data = await req.json();
-      setRespon(data.message);
-    } catch (error) {
-      setRespon("Gagal menghubungi server.");
-    }
-  };
+import {
+  Card, CardContent,
+  CardDescription, CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
+const items = [
+  {
+    value: "plans",
+    trigger: "What The Recommended Plans For You",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, possimus!",
+  },
+  {
+    value: "billing",
+    trigger: "Tier Billing",
+    content: 
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, optio?"
+  },
+  {
+    value: "cancel",
+    trigger: "How To Stop Subscription",
+    content: 
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, possimus!"
+  },
+]
+
+export default function HomePage() {
   return (
-    <div className="p-8">
-      <h1 className="text-xl font-bold mb-4">Uji Coba MVP</h1>
-      <button 
-        onClick={testKoneksi} 
-        className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
-      >
-        Ping API
-      </button>
-      <p className="mt-4 font-mono text-sm text-gray-700">{respon}</p>
+    <div className="w-full rounded-none border-x-0">
+      <AccordionCard />
     </div>
-  );
+  )
+}
+
+export function AccordionCard () {
+  return (
+    <Card className="w-full">
+      <CardHeader>
+        <CardTitle>Subscription & Billing</CardTitle>
+        <CardDescription>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto laboriosam, aspernatur rerum
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Accordion defaultValue={["plans"]}>
+          {items.map((item) => (
+            <AccordionItem key={item.value} value={item.value}>
+              <AccordionTrigger>{item.trigger}</AccordionTrigger>
+              <AccordionContent>{item.content}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </CardContent>
+    </Card>
+  )
 }
