@@ -18,7 +18,7 @@ export function ModeTonggle() {
   }, [])
 
   if (!mounted) {
-    return <Button variant="outline" size="icon" disabled />
+    return <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-foreground" disabled />
   }
 
   const Icon =
@@ -28,7 +28,7 @@ export function ModeTonggle() {
     <DropdownMenu>
       <DropdownMenuTrigger
         render={
-          <Button variant="outline" size="icon">
+          <Button variant="ghost" size="icon">
             <Icon className="size-4" />
             <span className="sr-only">Choose Color</span>
           </Button>

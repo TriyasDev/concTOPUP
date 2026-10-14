@@ -1,14 +1,22 @@
 import Link from "next/link"
 import { cacheLife } from "next/cache"
-import { ModeTonggle } from "./mode-toggle"
 
 const footerSections = [
   {
+    title: "Product",
+    links: [
+      { label: "Premium App", href: "/PremiumApp"},
+      { label: "Top Up Games", href: "/Voucher Game" },
+      { label: "Primary Needs", href: "/PremierNeeds"},
+      
+    ]
+  },
+  {
     title: "Useful Links",
     links: [
-      { label: "About Us", href: "#" },
-      { label: "FAQ", href: "#" },
-      { label: "S&K", href: "#" }
+      { label: "Contact Us", href: "/ContactUs"},
+      { label: "About Us", href: "/AboutUs" },
+      { label: "FAQ", href: "/FAQ" },
     ]
   },
   {
@@ -17,7 +25,7 @@ const footerSections = [
       { label: "Instagram", href: "/instagram" },
       { label: "Tiktok", href: "/Tiktok" },
       { label: "Facebook", href: "/Facebook" },
-      { label: "Youtube", href: "/Youtube" }
+      { label: "Youtube", href: "/Youtube" },
     ]
   },
 ]
@@ -52,7 +60,6 @@ export async function Footer() {
               </ul>
             </div>
           ))}
-          <p className="">Choose Color<ModeTonggle /></p>
         </div>
 
         <div className="mt-12 border-t pt-6 text-xs text-muted-foreground">

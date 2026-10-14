@@ -11,9 +11,6 @@ import {
   CardTitle
 } from "@/components/ui/card"
 
-import { Suspense } from "react"
-import { ModeTonggle } from "@/components/ui/mode-toggle"
-
 const items = [
   {
     value: "plans",
@@ -44,7 +41,7 @@ const items = [
 export default function HomePage() {
   return (
     <div className="w-full rounded-none border-x-0">
-      <AccordionCard />
+      {/* <AccordionCard /> */}
     </div>
   )
 }
