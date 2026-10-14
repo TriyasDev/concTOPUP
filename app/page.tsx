@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card"
 
 import { Suspense } from "react"
+import { ModeTonggle } from "@/components/ui/mode-toggle"
 
 const items = [
   {

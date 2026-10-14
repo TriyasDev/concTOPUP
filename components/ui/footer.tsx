@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { cacheLife } from "next/cache"
+import { ModeTonggle } from "./mode-toggle"
 
 const footerSections = [
   {
@@ -18,7 +19,7 @@ const footerSections = [
       { label: "Facebook", href: "/Facebook" },
       { label: "Youtube", href: "/Youtube" }
     ]
-  }
+  },
 ]
 
 async function getCachedYear() {
@@ -51,6 +52,7 @@ export async function Footer() {
               </ul>
             </div>
           ))}
+          <p className="">Choose Color<ModeTonggle /></p>
         </div>
 
         <div className="mt-12 border-t pt-6 text-xs text-muted-foreground">

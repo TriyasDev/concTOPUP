@@ -32,8 +32,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
-          enableSystem
-          disableTransitionChange
           >
             {children}
             <Footer />
