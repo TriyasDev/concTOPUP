@@ -8,8 +8,10 @@ import {
 import {
   Card, CardContent,
   CardDescription, CardHeader,
-  CardTitle,
+  CardTitle
 } from "@/components/ui/card"
+
+import { Suspense } from "react"
 
 const items = [
   {
@@ -30,6 +32,12 @@ const items = [
     content: 
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, possimus!"
   },
+  {
+    value: "contact",
+    trigger: "How To Contact US",
+    content: 
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, possimus!"
+  }
 ]
 
 export default function HomePage() {
@@ -50,7 +58,7 @@ export function AccordionCard () {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <Accordion defaultValue={["plans"]}>
+        <Accordion defaultValue={[]}>
           {items.map((item) => (
             <AccordionItem key={item.value} value={item.value}>
               <AccordionTrigger>{item.trigger}</AccordionTrigger>
