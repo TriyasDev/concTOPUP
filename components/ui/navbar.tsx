@@ -7,7 +7,12 @@ import { Button } from "@/components/ui/button"
 import { ModeTonggle } from "@/components/ui/mode-toggle"
 
 const navLinks = [
-  { label: "Home", href: "/homme"},
+  { label: "Home", href: "/home" },
+  { label: "AboutUs", href: "/About" },
+  { label: "Product", href: "/Product" },
+  // { label: "TellUsMore", href: "/Feedback" },
+  // { label: "Ranking", href: "/Rank" },
+  // { label: "Account", href: "/Account" },
 ]
 
 export function Navbar() {
