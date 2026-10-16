@@ -18,30 +18,6 @@ export const products: Product[] = [
     price: 50000,
     category: "goods"
   },
-  {
-    slug: "pln",
-    name: "Token Listrik",
-    publisher: "PT PLN",
-    image: "/goods/pln.webp",
-    price: 50000,
-    category: "goods"
-  },
-  {
-    slug: "pln",
-    name: "Token Listrik",
-    publisher: "PT PLN",
-    image: "/goods/pln.webp",
-    price: 50000,
-    category: "goods"
-  },
-  {
-    slug: "pln",
-    name: "Token Listrik",
-    publisher: "PT PLN",
-    image: "/goods/pln.webp",
-    price: 50000,
-    category: "goods"
-  },
 
 // Games App
   {

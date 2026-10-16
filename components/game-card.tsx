@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Button, buttonVariants  } from "@/components/ui/button"
 import Link from "next/link"
 import {
   Card,
@@ -48,9 +48,12 @@ export function GameCard({ game }: { game: Game }) {
             Rp {game.price.toLocaleString("id-ID")}
           </p>
         </div>
-        <Button size="sm" render={<Link href={'/product/${game.slug}'} />}>
+        <Link 
+        href={'product/${game.slug}'} 
+        className={buttonVariants({ size: "sm" })}
+        >
           Buy Now
-        </Button>
+        </Link>
       </CardFooter>
     </Card>
   )
