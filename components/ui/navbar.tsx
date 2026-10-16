@@ -5,6 +5,7 @@ import { useState } from "react"
 import { ListIcon, XIcon } from "@phosphor-icons/react"
 import { Button } from "@/components/ui/button"
 import { ModeTonggle } from "@/components/ui/mode-toggle"
+import { authClient } from "@/lib/auth-client"
 
 const navLinks = [
   { label: "Home", href: "/home" },
@@ -17,6 +18,7 @@ const navLinks = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const { data: session } = authClient.useSession()
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
@@ -46,6 +48,12 @@ export function Navbar() {
             >
               {open ? <XIcon className="size-4" /> : <ListIcon className="size-4"/>}
             </Button>
+            <Button variant="ghost" size="sm" onClick={() => authClient.signOut()} >
+              LogOut
+            </Button>
+            <Link href="/login" className="text-sm font-medium">
+              LogIn
+            </Link>
         </div>
       </div>
       {open && (
