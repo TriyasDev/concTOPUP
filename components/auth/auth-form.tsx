@@ -57,16 +57,13 @@ export function AuthForm({ mode, next }: Props) {
   return (
     <section className="mx-auto flex max-w-sm flex-col gap-6 px-6 py-16">
       <div className="space-y-1">
-        <div className="mb-2 inline-block border-2 border-foreground px-2 py-0.5 text-xs">
-          {isSignup ? "DAFTAR" : "MASUK"}
-        </div>
         <h1 className="text-xl font-semibold">
-          {isSignup ? "Buat akun baru" : "Selamat datang lagi"}
+          {isSignup ? "Register" : "Login"}
         </h1>
         <p className="text-sm text-muted-foreground">
           {isSignup
-            ? "Daftar sebentar, topup jadi lebih cepat."
-            : "Lanjutkan dengan akun yang sudah kamu punya."}
+            ? "Dapatkan berbagai benefit dengan membuat akun"
+            : "Gunakan akun email anda untuk mempercepat proses topup"}
         </p>
       </div>
 

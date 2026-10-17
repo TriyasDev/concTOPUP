@@ -9,9 +9,9 @@ import { ModeTonggle } from "@/components/ui/mode-toggle"
 import { authClient } from "@/lib/auth-client"
 
 const navLinks = [
-  { label: "Home", href: "/home" },
+  { label: "Product", href: "/" },
   { label: "AboutUs", href: "/About" },
-  { label: "Product", href: "/Product" },
+  { label: "GameNews", href: "/News"}
 ]
 
 export function Navbar() {
@@ -51,12 +51,12 @@ export function Navbar() {
                 {session.user.name.split(" ")[0]}
               </Link>
               <Button variant="ghost" size="sm" onClick={handleSignOut}>
-                Keluar
+                Logout
               </Button>
             </>
           ) : (
             <Link href="/login" className="text-sm font-medium">
-              Masuk
+              Login
             </Link>
           )}
 
