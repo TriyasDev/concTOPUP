@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge"
-import { Button, buttonVariants  } from "@/components/ui/button"
+import { buttonVariants  } from "@/components/ui/button"
 import Link from "next/link"
 import {
   Card,
@@ -27,7 +27,7 @@ export function GameCard({ game }: { game: Game }) {
           alt={game.name}
           className="size-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        <div className="absolute inset-x-0 bottom-0 h- bg-linear-to-t p-25 from-card to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-card to-transparent" />
 
         {game.discount && (
           <Badge className="absolute top-3 left-3">
@@ -49,7 +49,7 @@ export function GameCard({ game }: { game: Game }) {
           </p>
         </div>
         <Link 
-        href={'product/${game.slug}'} 
+        href={'/product/${game.slug}'} 
         className={buttonVariants({ size: "sm" })}
         >
           Buy Now
